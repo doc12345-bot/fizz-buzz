@@ -22,16 +22,29 @@
       }
       function random(){
           let check = (Math.floor(Math.random() *10));
-         
-              if ((check/3) == 0){
+              if ((check%3) == 0){
               return "Fizz!";
-          } else if ((check/5) == 0) {
+          } else if ((check%5) == 0) {
               return "Buzz!";
           } else {
               return check;
           }
       };
       document.getElementById("number").innerHTML = randomNumber();
+
+    let answer = parseInt(prompt("Please enter the number you would like to FizzBuzz up to: "));
+
+    for (let i = 1; i <= answer; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+            console.log("FizzBuzz");
+        } else if (i % 5 === 0) {
+            console.log("Buzz");
+        } else if (i % 3 === 0) {
+            console.log("Fizz");
+        } else {
+        console.log(i);
+        } 
+    };
       //Website shows a number, user presses Fizz, Buzz or enters the correct number coming next.
       //multiples of 3 = fizz
       //multiples of 5 = buzz
@@ -40,11 +53,11 @@
 <style>
     #number {
      font-size: 90;
-     height: auto;   
+     height: 50px;   
     }
     #ranNum{
         font-size: 90;
-        height: 55px;
+        height: 100px;
     }
 </style>
 </html>
