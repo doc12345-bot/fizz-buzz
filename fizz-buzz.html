@@ -5,15 +5,46 @@
 </head>
 <body>
     <main>
-        <input type="number" value="Choose your own starting number"><br>
-        <input type="button" value="Buzz!"><br>
-        <input type="button" value="Fizz!"><br>
-        <input type="number" value="Next number"><br>
+        <div>
+            <p id="number"></p>
+            <button id="ranNum" onclick="random()">Get a number!</button>
+        </div>
+        <div>
+            <input type="number" value="Choose your own starting number"><br>
+            <input type="button" value="Buzz!"><br>
+            <input type="button" value="Fizz!"><br>
+            <input type="number" value="Next number"><br>
+        </div>
     </main>
   <script>
+      function randomNumber () {
+          return Math.floor(Math.random() * 10 + 1 ) ; 
+      }
+      function random(){
+          let check = (Math.floor(Math.random() *10));
+         
+              if ((check/3) == 0){
+              return "Fizz!";
+          } else if ((check/5) == 0) {
+              return "Buzz!";
+          } else {
+              return check;
+          }
+      };
+      document.getElementById("number").innerHTML = randomNumber();
       //Website shows a number, user presses Fizz, Buzz or enters the correct number coming next.
       //multiples of 3 = fizz
       //multiples of 5 = buzz
   </script>
 </body>
+<style>
+    #number {
+     font-size: 90;
+     height: auto;   
+    }
+    #ranNum{
+        font-size: 90;
+        height: 55px;
+    }
+</style>
 </html>
