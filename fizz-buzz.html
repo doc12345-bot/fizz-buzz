@@ -7,7 +7,7 @@
     <main>
         <div>
             <p id="number"></p>
-            <button id="ranNum" onclick="random()">Get a number!</button>
+            <button id="ranNum" onclick="randomNumber()">Get a number!</button>
         </div>
         <div>
             <input type="number" value="Choose your own starting number"><br>
@@ -17,6 +17,7 @@
         </div>
     </main>
   <script>
+      const btn = document.querySelector('ranNum');
       function randomNumber () {
           return Math.floor(Math.random() * 10 + 1 ) ; 
       }
@@ -30,7 +31,7 @@
               return check;
           }
       };
-      document.getElementById("number").innerHTML = randomNumber();
+    document.getElementById("number").innerHTML = randomNumber();
 
     let answer = parseInt(prompt("Please enter the number you would like to FizzBuzz up to: "));
 
